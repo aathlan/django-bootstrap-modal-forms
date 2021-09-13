@@ -77,11 +77,12 @@ https://github.com/trco/django-bootstrap-modal-forms
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                        var body = $("body");
-                        if (body.length === 0) {
-                            console.error("django-bootstrap-modal-forms: <body> element missing in your html.");
+                    var modal_success = $("modal-success");
+                        if (modal_success.length === 0) {
+                            console.error("django-bootstrap-modal-forms: <modal-success> element missing in your html.");
                         }
-                        body.prepend(asyncSettings.successMessage);
+                        modal_success.prepend(asyncSettings.successMessage);
+    
     
                         // Update page without refresh
                         $.ajax({
